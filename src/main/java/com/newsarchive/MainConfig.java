@@ -1,4 +1,4 @@
-package com.example.newsarchive;
+package com.newsarchive;
 
 import javax.sql.DataSource;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
