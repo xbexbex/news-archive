@@ -1,4 +1,4 @@
-package com.example.newsarchive.config;
+package com.example.newsarchive;
 
 import javax.sql.DataSource;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("production")
-public class ProductionProfile {
+public class MainConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
