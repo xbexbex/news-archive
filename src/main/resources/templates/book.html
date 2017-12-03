@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>News</title>
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+        <form th:action="@{/book/{bookId}/edit(bookId=${book.id})}" th:method="GET">
+            <input type="submit" value="Muokkaa" th:id="${'edit-' + book.id}"/>
+        </form><br/>
+        <form th:action="@{/book/{bookId}(bookId=${book.id})}" th:method="DELETE">
+            <input type="submit" value="Poista" th:id="${'remove-' + book.id}"/>
+        </form><br/>
+
+        <h3 th:text="${book.name}"></h3>
+        <span>Kirjoittaja:</span><span th:text="${book.author}"></span>
+        <br/>
+        <span>Julkaistu:</span><span th:text="${book.date}"></span>
+        <br/>
+        <span>ISBN:</span><span th:text="${book.ISBN}"></span>
+        <ul>
+            <li th:each="tag: ${book.tags}">
+                <span th:text="${tag.name}"></span>
+            </li>
+        </ul>
+    </body>
+</html>

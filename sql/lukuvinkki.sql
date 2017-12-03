@@ -1,0 +1,3 @@
+CREATE TABLE lukuvinkki(
+	id INTEGER NOT NULL UNIQUE
+);

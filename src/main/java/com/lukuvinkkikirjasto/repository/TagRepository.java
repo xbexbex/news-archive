@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.newsarchive.repository;
-import com.newsarchive.domain.News;
+package com.lukuvinkkikirjasto.repository;
+import com.lukuvinkkikirjasto.domain.Tag;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Burilas
  */
-public interface NewsRepository extends JpaRepository<News, Long> {
+public interface TagRepository extends JpaRepository<Tag, Long> {
+    Tag findByName(String name);
 }

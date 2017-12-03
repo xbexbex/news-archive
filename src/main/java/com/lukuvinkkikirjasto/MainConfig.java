@@ -1,4 +1,4 @@
-package com.newsarchive;
+package com.lukuvinkkikirjasto;
 
 import javax.sql.DataSource;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;

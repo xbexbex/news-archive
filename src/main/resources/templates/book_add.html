@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lisää kirja</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}"
+              href="../../css/main.css" />
+    </head>
+
+    <body>
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+        <h1>Lisää kirja</h1>
+        <form action="/add" method="post">
+            Kirjan nimi: <input type="text" name="bookName"/><br/>
+            Kirjoittaja: <input type="text" name="bookAuthor"/><br/>
+            Julkaisupäivämäärä: <input type="text" name="bookDate"/><br/>
+            ISBN: <input type="text" name="bookISBN"/><br/>
+            Tagit: <input type="text" name="tags"/><br/>
+            <input type="submit" value="Lisää" id="submit-book"/>
+        </form>
+    </body>
+</html>

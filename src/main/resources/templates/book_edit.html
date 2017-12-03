@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Muokkaa kirjaa</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}"
+              href="../../css/main.css" />
+    </head>
+
+    <body>
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+        <h1>Muokkaa kirjaa</h1>
+        <form th:action="@{/book/{bookId}/edit(bookId=${book.id})}" th:method="POST">
+            Kirjan nimi: <input type="text" name="bookName" th:value="${book.name}"/><br/>
+            Kirjoittaja: <input type="text" name="bookAuthor" th:value="${book.date}"/><br/>
+            Julkaisupäivämäärä: <input type="text" name="bookDate" th:value="${book.date}"/><br/>
+            ISBN: <input type="text" name="bookISBN" th:value="${book.ISBN}"/><br/>
+            Tagit: <input type="text" name="tags" th:value="${tags}"/><br/>
+            <input type="submit" value="Tallenna" id="submit-book"/>
+        </form>
+    </body>
+</html>

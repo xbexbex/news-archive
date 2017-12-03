@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.newsarchive.domain;
+package com.lukuvinkkikirjasto.domain;
 
 import java.util.List;
 import javax.persistence.Entity;
@@ -17,10 +17,13 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @AllArgsConstructor
 @Data
 @Entity
-public class News extends AbstractPersistable<Long> {
+public class Book extends AbstractPersistable<Long> {
 
-    private String title;
-    private String content;
-//    @ManyToMany
-//    private List<Tag> Tags;
+    private String name;
+    private String author;
+    private String ISBN;
+    private String date;
+
+    @ManyToMany
+    private List<Tag> Tags;
 }
