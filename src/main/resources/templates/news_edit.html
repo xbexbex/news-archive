@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Muokkaa kirjaa</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+        <link rel="stylesheet"  href="../static/css/main.css" th:href="@{/css/add.css}"/>
+    </head>
+
+    <body>
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+        <div class="form-container">
+            <h1>Edit the news article</h1>
+            <form th:action="@{/news/{id}/edit (id=${news.id})}" method="POST">
+                <div class="form-group">
+                    <label for="headline">Headline</label>
+                    <input type="text" class="form-control" id="headline" name="headline" th:value="${news.headline}" placeholder="Enter a headline"/>
+                </div>
+                <div class="form-group">
+                    <label for="subheading">Sub-heading</label>
+                    <input type="text" class="form-control" id="subheading" name="subheading" th:value="${news.subheading}" placeholder="Enter sub-heading"/>
+                </div>
+                <div class="form-group">
+                    <label for="imgUrl">Image</label>
+                    <input type="text" class="form-control" id="subheading" name="imgUrl" th:value="${news.imgUrl}" placeholder="Enter a link to image"/>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" id="content" name="content" rows="8" th:field="${news.content}" placeholder="Enter content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

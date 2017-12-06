@@ -5,9 +5,9 @@
  */
 package com.newsarchive.domain;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,8 +19,15 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class News extends AbstractPersistable<Long> {
 
-    private String title;
+    private String headline;
+    private String subheading;
     private String content;
-//    @ManyToMany
-//    private List<Tag> Tags;
+    private String category;
+    private String imgUrl;
+    private LocalDateTime date;
+
+    public String getDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        return date.format(formatter);
+    }
 }

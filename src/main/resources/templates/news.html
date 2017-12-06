@@ -3,14 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <title>News</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+        <link rel="stylesheet"  href="../static/css/main.css" th:href="@{/css/main.css}"/>
     </head>
     <body>
 
         <header th:replace="fragments/header :: header">
             <p>header with links etc</p>
         </header>
-
-        <h1 th:text="${news.title}">Title</h1>
-        
+        <h1 th:text="${news.headline}"></h1>
+        <h2 th:text="${news.subheading}"></h2>
+        <p>Published: <span th:text="${news.date}"></span></p>
+        <img class="news-image" th:src="${news.imgUrl}" alt="a news image"/>
+        <hr/>
+        <p th:text="${news.content}"></p>
+        <hr/>
+        <p><a th:href="@{/news/category/{category} (category=${news.category})}">Category: <span th:text="${news.category}"></span></a></p>
+        <a class="btn btn-outline-primary" th:href="@{/news/{id}/edit (id=${news.id})}">Edit</a>
+        <a class="btn btn-outline-danger" th:href="@{/news/{id}/delete (id=${news.id})}">Delete</a>
     </body>
 </html>

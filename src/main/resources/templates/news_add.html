@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Add a news article</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+        <link rel="stylesheet"  href="../static/css/add.css" th:href="@{/css/add.css}"/>
+    </head>
+
+    <body>
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+        <div class="form-container">
+            <h1>Add a news article</h1>
+            <form th:action="@{/news/add}" method="POST">
+                <div class="form-group">
+                    <label for="headline">Headline</label>
+                    <input type="text" class="form-control" id="headline" name="headline" placeholder="Enter a headline"/>
+                </div>
+                <div class="form-group">
+                    <label for="subheading">Sub-heading</label>
+                    <input type="text" class="form-control" id="subheading" name="subheading" placeholder="Enter sub-heading"/>
+                </div>
+                <div class="form-group">
+                    <label for="imgUrl">Image</label>
+                    <input type="text" class="form-control" id="subheading" name="imgUrl" placeholder="Enter a link to image"/>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" id="content" name="content" rows="8" placeholder="Enter content"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" id="category" name="category">
+                        <option>Global</option>
+                        <option>Local</option>
+                        <option>Culture</option>
+                        <option>Sports</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
