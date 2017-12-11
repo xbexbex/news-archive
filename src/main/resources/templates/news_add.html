@@ -16,19 +16,19 @@
             <form th:action="@{/news/add}" method="POST">
                 <div class="form-group">
                     <label for="headline">Headline</label>
-                    <input type="text" class="form-control" id="headline" name="headline" placeholder="Enter a headline"/>
+                    <input type="text" class="form-control" id="headline" name="headline" placeholder="Enter a headline" maxlength="500"/>
                 </div>
                 <div class="form-group">
                     <label for="subheading">Sub-heading</label>
-                    <input type="text" class="form-control" id="subheading" name="subheading" placeholder="Enter sub-heading"/>
+                    <input type="text" class="form-control" id="subheading" name="subheading" placeholder="Enter sub-heading" maxlength="1000"/>
                 </div>
                 <div class="form-group">
                     <label for="imgUrl">Image</label>
-                    <input type="text" class="form-control" id="subheading" name="imgUrl" placeholder="Enter a link to image"/>
+                    <input type="text" class="form-control" id="subheading" name="imgUrl" placeholder="Enter a link to image" maxlength="1000"/>
                 </div>
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content" rows="8" placeholder="Enter content"></textarea>
+                    <textarea class="form-control" id="content" name="content" rows="8" placeholder="Enter content" maxlength="8000"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="category">Category</label>

@@ -7,6 +7,7 @@ package com.newsarchive.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,11 +19,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 @Entity
 public class News extends AbstractPersistable<Long> {
-
+    
+    @Column(length=1000)
     private String headline;
+    @Column(length=2000) 
     private String subheading;
+    @Column(length=8000)
     private String content;
+    @Column(length=255)
     private String category;
+    @Column(length=1000) 
     private String imgUrl;
     private LocalDateTime date;
 
