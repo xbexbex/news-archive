@@ -38,6 +38,14 @@ public class NewsController {
         return "all_news";
     }
 
+    @GetMapping("/news/category/{category}")
+    public String listByCategory(Model model, @PathVariable String category) {
+        category = category.substring(0, 1).toUpperCase() + category.substring(1);
+        model.addAttribute("allNews", this.newsRepository.findByCategory(category));
+        model.addAttribute("category", category);
+        return "news_category";
+    }
+
     @GetMapping("/news/add")
     public String add(Model model) {
         return "news_add";
@@ -56,11 +64,11 @@ public class NewsController {
         model.addAttribute("news", news);
         return "news";
     }
-    
-    @DeleteMapping("/news/{id}/delete")
+
+    @GetMapping("/news/{id}/delete")
     public String deleteNews(Model model, @PathVariable Long id) {
         this.newsRepository.delete(id);
-        return "news";
+        return "all_news";
     }
 
     @PostMapping("/news/{id}/edit")
